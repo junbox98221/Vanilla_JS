@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+  font-size: 100px;
+}
+
+.color_purple {
+  background-color: purple;
+}
+.color_yellow {
+  background-color: yellow;
+}
+.color_blue {
+  background-color: blue;
+}
