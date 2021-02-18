@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+}
+
+ul {
+  font-size: 30px;
+}
+li {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+}
