@@ -6,9 +6,6 @@ const form = document.getElementById("js-form"),
 let pendingTasks = [],
   finishedTasks = [];
 
-const PENDING = "PENDING";
-const FINISHED = "FINISHED";
-
 function getObj(text) {
   return { id: Date.now(), text };
 }
@@ -20,7 +17,6 @@ function saveToLS() {
 // LS에 저장될 때 사용되는 전역변수를 update하는 함수
 function putPendingTasks(taskObj) {
   pendingTasks.push(taskObj);
-  console.log(pendingTasks);
 }
 
 function putFinishedTasks(taskObj) {
@@ -29,7 +25,12 @@ function putFinishedTasks(taskObj) {
 
 function deleteTask(e) {
   const li = e.target.parentNode;
+  console.log(li);
   li.parentNode.removeChild(li);
+  const id = li.id;
+  removeInPending(id);
+  removeInFinished(id);
+  saveToLS();
 }
 
 function sameLiPart(taskObj) {
@@ -123,7 +124,6 @@ function pendingJsonErrorHandler(pendingLS) {
 }
 
 function finishedJsonErrorHandler(finishedLS) {
-  console.log();
   return JSON.parse(finishedLS) || [];
 }
 
