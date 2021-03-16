@@ -13,7 +13,7 @@ function addToPendingArr(taskObj) {
 function addToFinishedArr(taskObj) {
   finishedArr.push(taskObj);
 }
-//id is for remove, move ...
+//id is used in various way. Important
 function getObj(text) {
   return { id: Date.now(), text };
 }
@@ -104,7 +104,7 @@ function pendingJsonErrorHandler(pendingLS) {
 function finishedJsonErrorHandler(finishedLS) {
   return JSON.parse(finishedLS) || [];
 }
-//
+//get data from LS and load to (html.ver and global varriable array
 function loadPending() {
   const pending_from_LS = pendingJsonErrorHandler(
     localStorage.getItem("pending")
